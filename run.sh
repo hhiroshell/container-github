@@ -1,6 +1,8 @@
 #!/bin/sh
 
 mkdir -p "$HOME/.config"
+touch "$HOME/.config/git-credential"
+touch "$HOME/.config/hub"
 echo "https://$WERCKER_GITHUB_TOKEN:@github.com" > "$HOME/.config/git-credential"
 echo "github.com:" > "$HOME/.config/hub"
 echo "- oauth_token: $WERCKER_GITHUB_TOKEN" >> "$HOME/.config/hub"
