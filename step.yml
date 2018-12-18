@@ -12,6 +12,6 @@ properties:
 - name: token
   type: string
   required: true
-- name: command
+- name: cmd
   type: string
   required: true
