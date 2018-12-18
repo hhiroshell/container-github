@@ -1,0 +1,17 @@
+name: github
+version: 1.0.0
+summary: github
+# tags:
+#   - template
+#   - steps
+#   - template
+properties:
+- name: user
+  type: string
+  required: true
+- name: token
+  type: string
+  required: true
+- name: command
+  type: string
+  required: true
