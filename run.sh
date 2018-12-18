@@ -11,4 +11,4 @@ git config --global core.autocrlf "input"
 git config --global hub.protocol "https"
 git config --global credential.helper "store --file=$HOME/.config/git-credential"
 
-hub $WERCKER_GITHUB_COMMAND
+hub $WERCKER_GITHUB_CMD
