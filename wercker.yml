@@ -2,7 +2,7 @@ box: ubuntu:18.04
 
 build:
   steps:
-  - shellcheck:
+  - shellcheck
   - script: 
       name: install envsubst
       code: |
