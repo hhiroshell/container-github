@@ -1,9 +1,19 @@
-box: hhayakaw/hub:v2.6.0
+box: ubuntu:18.04
 
 build:
   steps:
   - shellcheck:
-      files: run.sh
+  - script: 
+      name: install envsubst
+      code: |
+        apt-get update && apt-get install -y wget
+  - script: 
+      name: install hub
+      code: |
+        wget -O /tmp/hub-linux-amd64-$HUB_VERSION.tgz "https://github.com/github/hub/releases/download/v$HUB_VERSION/hub-linux-amd64-$HUB_VERSION.tgz"
+        tar -C /tmp -zxf "/tmp/hub-linux-amd64-$HUB_VERSION.tgz"
+        mv /tmp/hub-linux-amd64-$HUB_VERSION/bin/hub /usr/local/bin/
+        rm -rf /tmp/*
 
 publish:
   steps:
