@@ -3,13 +3,14 @@ box: ubuntu:18.04
 build:
   steps:
   - shellcheck
-  - script: 
+  - script:
       name: install envsubst
       code: |
         apt-get update && apt-get install -y wget
-  - script: 
+  - script:
       name: install hub
       code: |
+        export HUB_VERION=2.6.0
         wget -O /tmp/hub-linux-amd64-$HUB_VERSION.tgz "https://github.com/github/hub/releases/download/v$HUB_VERSION/hub-linux-amd64-$HUB_VERSION.tgz"
         tar -C /tmp -zxf "/tmp/hub-linux-amd64-$HUB_VERSION.tgz"
         mv /tmp/hub-linux-amd64-$HUB_VERSION/bin/hub /usr/local/bin/
